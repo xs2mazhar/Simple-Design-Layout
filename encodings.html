@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tagl.me - connect physical objects to the web</title>
+
+  
+<link href="assets/bootstrap.css" media="all" rel="stylesheet" />
+<link href="assets/sb-admin.css" media="all" rel="stylesheet" />
+<link href="assets/metisMenu.min.css" media="all" rel="stylesheet" />
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" media="all" rel="stylesheet" />
+<link href="assets/dataTables.bootstrap.css" media="all" rel="stylesheet" />
+
+<script src="assets/jquery.js"></script>
+<script src="assets/bootstrap.js"></script>
+<script src="assets/sb-admin.js"></script>
+<script src="assets/jquery.metisMenu.js"></script>
+<script src="assets/jquery.dataTables.js"></script>
+<script src="assets/dataTables.bootstrap.js"></script>
+
+</head>
+
+<body>
+	<h1>Hello this is Heading 1</h1>
+	<div ng-view></div>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Tagl.me</a>
+            </div>
+            <!-- /.navbar-header -->
+			
+            <ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-cog fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href=""><i class="fa fa-user fa-fw"></i> User Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a data-method="post" href="/logout" rel="nofollow"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+			
+
+            <div class="navbar-default navbar-static-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="side-menu">
+						<li>
+							<a href="/dashboard"><i class="fa fa-bar-chart-o fa-fw"></i> Dashboard</a>
+						</li>
+                        <li>
+							<a href="/tag_groups"><i class="fa fa-database fa-fw"></i> Deploy</a>
+							<ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Encodings</a>
+                                </li>
+                            </ul>
+							<!-- /.nav-second-level -->
+						</li>
+						<li>
+							<a href="/dashboard"><i class="fa fa-bar-chart-o fa-fw"></i> Courses</a>
+						</li>
+					</ul>
+                    <!-- /#side-menu -->
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+			
+        </nav>
+
+		<div id="page-wrapper">
+ 			<div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">Encoding templates</h1>
+				</div>
+                <!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row text-center">
+				<div class="col-md-3 col-lg-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+							New NFC encoding
+                        </div>
+                        <div class="panel-body">
+                            <i class="fa fa-4x fa-tag"></i> 
+							<h4><a class="btn btn-primary" data-target="#myModal" data-toggle="modal" href="#">Create</a></h4> 
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-md-3 -->
+                <div class="col-md-3 col-lg-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            New iBeacon encoding
+                        </div>
+                        <div class="panel-body">
+							<i class="fa fa-4x fa-wifi"></i>
+                            <h4><a class="btn btn-primary" data-target="#myModal" data-toggle="modal" href="#">Create</a></h4> 
+						</div>
+                    </div>
+                </div>
+                <!-- /.col-md-3 -->
+                <div class="col-md-3 col-lg-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            New uriBeacon encoding
+                        </div>
+                        <div class="panel-body">
+							<i class="fa fa-4x fa-link"></i>
+                            <h4><a class="btn btn-primary" data-target="#myModal" data-toggle="modal" href="#">Create</a></h4> 
+						</div>
+                    </div>
+                </div>
+                <!-- /.col-md-3 -->
+			</div>
+            <!-- /.row -->
+			<div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">Encoding list</h1>
+				</div>
+                <!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+	
+			
+			<form accept-charset="UTF-8" action="" data-remote="true" id="tableform" method="post">
+			<div class="row">
+                <div class="col-md-12">
+					<p>
+					<div class="btn-group">
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Create<span class="caret"></span></button>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation"><a data-target="#myModal" data-toggle="modal" href="#" role="menuitem" tabindex="-1">NFC encoding</a></li>
+							<li role="presentation"><a data-target="#myModal" data-toggle="modal" href="#" role="menuitem" tabindex="-1">iBeacon encoding</a></li>
+							<li role="presentation"><a data-target="#myModal" data-toggle="modal" href="#" role="menuitem" tabindex="-1">uriBeacon encoding</a></li>
+						</ul>
+					</div>
+					</div>		
+					<a class="btn btn-danger" href="#">Delete</a>
+					<div class="btn-group">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">More<span class="caret"></span></button>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Copy</a></li>
+							<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Paste</a></li>
+						</ul>
+					</div>
+					</div>		
+
+					</p>
+				</div>
+                <!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-responsive">
+						<table id="encoding_list" class="table table-hover">
+							<thead>
+								<tr>
+									<th> <input id="checkall" type="checkbox" value=""> </th>
+									<th>Name</th>
+									<th>Type</th>
+									<th>Configs</th>
+									<th>Created</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input id="tag_group_ids_" name="tag_group_ids[]" type="checkbox" value="3" /></td>
+									<td>New marketing</td>
+									<td><i class="fa fa-tag"></i></td>
+									<td>14</td>
+									<td>2014-09-24 12:49:25 UTC</td>
+									<td>
+										<div class="dropdown">
+											<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Actions<span class="caret"></span></button>
+											<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+												<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Edit</a></li>
+												<li role="presentation" class="divider"></li>
+												<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Export...</a></li>
+											</ul>
+										</div>	
+									</td>
+								</tr>
+								<tr>
+									<td><input id="tag_group_ids_" name="tag_group_ids[]" type="checkbox" value="3" /></td>
+									<td>Some encoding</td>
+									<td><i class="fa fa-wifi"></i></td>
+									<td>21</td>
+									<td>2014-09-24 12:49:25 UTC</td>
+									<td>
+										<div class="dropdown">
+											<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Actions<span class="caret"></span></button>
+											<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+												<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Edit</a></li>
+												<li role="presentation" class="divider"></li>
+												<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Export...</a></li>
+											</ul>
+										</div>	
+									</td>
+								</tr>
+								<tr>
+									<td><input id="tag_group_ids_" name="tag_group_ids[]" type="checkbox" value="3" /></td>
+									<td>New tags</td>
+									<td><i class="fa fa-link"></i></td>
+									<td>16</td>
+									<td>2014-09-24 12:49:25 UTC</td>
+									<td>
+										<div class="dropdown">
+											<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">Actions<span class="caret"></span></button>
+											<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+												<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Edit</a></li>
+												<li role="presentation" class="divider"></li>
+												<li role="presentation"><a href="#" role="menuitem" tabindex="-1">Export...</a></li>
+											</ul>
+										</div>	
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- /.table-responsive -->
+				</div>
+				<!-- /.col-md-12 -->			
+			</div>
+			<!-- /.row -->			
+			</form>
+			<!-- Modal -->
+			<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						<form accept-charset="UTF-8" action="action" data-remote="true" id="activateform" method="post">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span>
+								<span class="sr-only">Close</span></button>
+								<h4 class="modal-title" id="myModalLabel">Create new encoding</h4>
+							</div>
+							<!-- /.modal-header -->
+							<div class="modal-body">
+								<p>Please enter encoding name</p>
+								<input class="form-control" id="name_input" name="name_input" placeholder="name" type="text" />
+								<div class='has-error'>
+									<p class="help-block" id='errordiv'></p>
+								</div>	
+								<p>Please enter encoding description</p>
+								<textarea class="form-control" rows="3" placeholder="short description here"></textarea>
+								<div class='has-error'>
+									<p class="help-block" id='errordiv'></p>
+								</div>	
+								<p>Please Course Description</p>
+								<textarea class="form-control" rows="3" placeholder="short description here"></textarea>
+								<div class='has-error'>
+									<p class="help-block" id='errordiv'></p>
+								</div>	
+							</div>
+							<!-- /.modal-body -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<a class="btn btn-primary" href="#" onclick="submit_code();">Save</a>
+							</div>
+							<!-- /.modal-footer -->
+						</form>
+					</div>
+					<!-- /.modal content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal-fade -->
+			<!-- End modal -->
+        </div>
+        <!-- /#page-wrapper -->
+	</div>
+	<!-- /#wrapper -->
+<script>
+$(document).ready(function() {
+        	oTable = $('#encoding_list').dataTable();    	
+    	});
+</script>
+</body>
+</html>
